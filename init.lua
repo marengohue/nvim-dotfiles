@@ -5,4 +5,4 @@ require 'baseline'
 require 'keymap'
 
 -- Install lazy and configure plugins
-require 'lua.lazy-bootstrap'
+require 'lazy-bootstrap'
