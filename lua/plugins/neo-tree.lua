@@ -17,6 +17,12 @@ return {
         filesystem = {
             filtered_items = {
                 hide_gitignored = true,
+                hide_hidden = false,
+                hide_dotfiles = false,
+                hide_by_name = {
+                    ".DS_Store",
+                    "thumbs.db"
+                }
             },
             window = {
                 mappings = {
