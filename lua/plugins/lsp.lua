@@ -196,6 +196,7 @@ return {
         },
 
         roslyn = {},
+        --csharp_ls = {},
         netcoredbg = {},
       }
 

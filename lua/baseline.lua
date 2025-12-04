@@ -1,8 +1,8 @@
 -- Set up some basic vim defaults.
-vim.cmd('set expandtab')
-vim.cmd('set tabstop=4')
-vim.cmd('set softtabstop=4')
-vim.cmd('set shiftwidth=4')
+vim.cmd 'set expandtab'
+vim.cmd 'set tabstop=4'
+vim.cmd 'set softtabstop=4'
+vim.cmd 'set shiftwidth=4'
 
 -- Leader = <Space>
 vim.g.mapleader = ' '
@@ -18,7 +18,7 @@ vim.o.showmode = false
 
 -- Sync clipboard between OS and Neovim.
 vim.schedule(function()
-    vim.o.clipboard = 'unnamedplus'
+  vim.o.clipboard = 'unnamedplus'
 end)
 
 -- No break indent - I dislike long lines of text.
@@ -39,6 +39,5 @@ vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣', multispace = '.' 
 
 -- Preview substitutions live, as you type!
 vim.o.inccommand = 'split'
-
 vim.o.cursorline = true
 vim.o.scrolloff = 10
