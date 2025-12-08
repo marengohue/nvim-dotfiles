@@ -7,9 +7,7 @@ return {
   },
   opts = {
     adapters = {
-      require 'neotest-vstest' {
-        sdk_path = '/lib/dotnet/sdk/9.0.112/',
-      },
+      require 'neotest-vstest' {},
     },
     summary = {
       open = 'botright vsplit | vertical resize 80',

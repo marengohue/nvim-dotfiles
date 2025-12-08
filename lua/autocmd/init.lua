@@ -1,1 +1,1 @@
-require('autocmd.yank-highlight')
+require 'autocmd.yank-highlight'
