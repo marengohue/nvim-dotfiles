@@ -43,7 +43,6 @@ return {
         callback = function(event)
           -- NOTE: Remember that Lua is a real programming language, and as such it is possible
           -- to define small helper and utility functions so you don't have to repeat yourself.
-
           local map = function(keys, func, desc, mode)
             mode = mode or 'n'
             vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
@@ -187,6 +186,7 @@ return {
 
         roslyn = {},
         netcoredbg = {},
+        html = {},
       }
 
       -- Ensure the servers and tools above are installed

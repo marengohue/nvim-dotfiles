@@ -45,6 +45,7 @@ return {
       { '<leader>nn', '<cmd>lua require("neotest").run.run()<cr>', desc = 'Ru[N] [N]earest Test' },
       { '<leader>na', '<cmd>lua require("neotest").run.run({suite = true })<cr>', desc = 'Ru[N] [A]ll Tests' },
       { '<leader>nf', '<cmd>lua require("neotest").run.run(vim.fn.expand("%"))<cr>', desc = 'Ru[N] Tests in Current [F]ile' },
+      { '<leader>dn', '<cmd>lua require("neotest").run.run({ strategy = "dap" })<cr>', desc = '[D]ebug [N]earest Test' },
       { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
       { '<leader>g', group = '[G]o To', mode = { 'n', 'v' } },
       { '<leader>r', group = '[R]ename', mode = { 'n', 'v' } },

@@ -7,32 +7,32 @@ return {
   },
   keys = {
     {
-      '<leader>dg',
+      '<leader>d<F1>',
       function()
         require('dap').continue()
       end,
-      desc = '[D]ebug: Go',
+      desc = '[D]ebug: Go (F1)',
     },
     {
-      '<F1>',
+      '<leader>dl',
       function()
         require('dap').step_into()
       end,
-      desc = 'Debug: Step Into',
+      desc = '[D]ebug: Step Into (L)',
     },
     {
-      '<F2>',
+      '<leader>dj',
       function()
         require('dap').step_over()
       end,
-      desc = 'Debug: Step Over',
+      desc = '[D]ebug: Step Over (J)',
     },
     {
-      '<F3>',
+      '<leader>do',
       function()
         require('dap').step_out()
       end,
-      desc = 'Debug: Step Out',
+      desc = '[D]ebug: Step [O]ut',
     },
     {
       '<leader>db',
@@ -54,7 +54,7 @@ return {
         require('dapui').toggle()
       end,
       desc = '[T]oggle [D]ebug UI',
-    },
+    }
   },
   config = function()
     local dap = require 'dap'
@@ -75,6 +75,10 @@ return {
         type = 'coreclr',
         name = 'LAUNCH directly from nvim',
         request = 'launch',
+        args = {
+          '-lp',
+          'AzureDev', -- Use AzureDev launch profile for debugging
+        },
         program = function()
           return dotnet_helpers.build_dll_path()
         end,
@@ -121,10 +125,7 @@ return {
       vim.fn.sign_define(tp, { text = icon, texthl = hl, numhl = hl })
     end
 
-    dap.listeners.after.event_initialized['dapui_config'] = function()
-      vim.notify 'after.event_init dapui_config'
-      dapui.open()
-    end
+    dap.listeners.after.event_initialized['dapui_config'] = dapui.open
     dap.listeners.before.event_terminated['dapui_config'] = dapui.close
     dap.listeners.before.event_exited['dapui_config'] = dapui.close
   end,
